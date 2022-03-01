@@ -29,6 +29,14 @@ public class User implements Serializable {
     @JoinColumn(name = "role_name", referencedColumnName = "role_name")})
   @ManyToMany
   private List<Role> roleList = new ArrayList<>();
+ /* @ManyToMany
+  private List<Trip> trips;
+  
+  private String address;
+  private String email;
+  private int birthYear;
+  private String gender;
+  */
 
   public List<String> getRolesAsStrings() {
     if (roleList.isEmpty()) {
@@ -51,6 +59,7 @@ public class User implements Serializable {
     public User(String userName, String userPass) {
         this.userName = userName;
         this.userPass = BCrypt.hashpw(userPass, BCrypt.gensalt());
+       // this.trips = new ArrayList<>();
     }
 
   public String getUserName() {
