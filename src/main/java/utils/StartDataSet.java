@@ -3,7 +3,6 @@ package utils;
 import entities.Guide;
 import entities.Role;
 import entities.User;
-import entities.Race;
 import entities.Trip;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +14,6 @@ public class StartDataSet {
 
     public static User user,admin,both;
     public static Role userRole,adminRole;
-    public static Race race1,race2;
     public static Guide guide1;
     public static Trip trip1,trip2;
 
@@ -33,13 +31,11 @@ public class StartDataSet {
             em.getTransaction().begin();
             em.createNamedQuery("User.deleteAllRows").executeUpdate();
             em.createNamedQuery("Role.deleteAllRows").executeUpdate();
-            em.createNamedQuery("Race.deleteAllRows").executeUpdate();
             em.createNamedQuery("Trip.deleteAllRows").executeUpdate();
 
 
             List<Trip> trips = new ArrayList();
-            race1 = new Race("Grand Prix","14-1-2022","12:30","Moscow");
-            race2 = new Race("Grand tour","26-6-2022","15:30","Dubai");
+
             
             guide1 = new Guide("John","Male",1992,"profile","img.webm");            
             trip1 = new Trip("BonbonLand","22-04","12:00","Bonbon gade 3", 2 ,"regntøj og gode sko");
@@ -62,8 +58,8 @@ public class StartDataSet {
             both.addRole(userRole);
             both.addRole(adminRole);
             
-            em.persist(race1);
-            em.persist(race2);
+            
+
             
             em.persist(trip1);
             em.persist(trip2);

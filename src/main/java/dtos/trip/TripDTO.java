@@ -1,18 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dtos.trip;
 
 import entities.Trip;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Olsso
- */
+
 public class TripDTO {
     
     private Long id;
@@ -24,14 +16,15 @@ public class TripDTO {
     private String packingList;
     
 
-    public TripDTO(String name, String date, String time, String location, int duration, String packingList) {
+   /* public TripDTO(String name, String date, String time, String location, int duration, String packingList) {
         this.name = name;
         this.date = date;
         this.time = time;
         this.location = location;
         this.duration = duration;
         this.packingList = packingList;
-    }
+    }*/
+    
     
     public TripDTO(Trip t){
         if(t.getId() != null) this.id = t.getId();
@@ -40,6 +33,10 @@ public class TripDTO {
         this.time = t.getTime();
         this.location = t.getLocation();
         this.packingList = t.getPackingList();        
+    }
+    
+    public TripDTO(){
+        
     }
     
     public static List<TripDTO> getDTos(List<Trip> trips){

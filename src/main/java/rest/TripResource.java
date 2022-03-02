@@ -33,18 +33,17 @@ import utils.EMF_Creator;
 public class TripResource {
     
     private static final EntityManagerFactory EMF = EMF_Creator.createEntityManagerFactory();
-    
     private static final TripFacade FACADE = TripFacade.getTripFacade(EMF);
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     
     @GET
-    @Produces({MediaType.APPLICATION_JSON})
+    @Produces(MediaType.APPLICATION_JSON)
     public String demo(){
         return "{\"msg\":\"Welcome to TripPage\"}";
     }
     
     @GET
-    @Produces({MediaType.APPLICATION_JSON})
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("show")
     public Response showTrips() throws API_Exception {
         List<TripDTO> tripDTOs = TripDTO.getDTos(FACADE.getAllTripsFromEntity());
@@ -52,7 +51,7 @@ public class TripResource {
     }
     
     @DELETE
-    @Produces({MediaType.APPLICATION_JSON})
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("/{id}")
     public Response deleteById(@PathParam("id")Long id) throws NotFoundException {
         boolean result = FACADE.deleteTripById(id);
