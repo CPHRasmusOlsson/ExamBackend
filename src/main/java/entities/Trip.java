@@ -15,6 +15,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -22,7 +23,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Olsso
  */
 @Entity
-@XmlRootElement
+@NamedQuery(name = "Trip.deleteAllRows", query = "DELETE from Trip")
 public class Trip implements Serializable {
 
     private static final long serialVersionUID = 1L;

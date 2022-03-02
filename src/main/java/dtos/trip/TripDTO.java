@@ -22,6 +22,7 @@ public class TripDTO {
     private String location;
     private int duration;
     private String packingList;
+    
 
     public TripDTO(String name, String date, String time, String location, int duration, String packingList) {
         this.name = name;
@@ -46,54 +47,9 @@ public class TripDTO {
         trips.forEach(trip->dtos.add(new TripDTO(trip)));
         return dtos;
     }
+    
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public int getDuration() {
-        return duration;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-
-    public String getPackingList() {
-        return packingList;
-    }
-
-    public void setPackingList(String packingList) {
-        this.packingList = packingList;
-    }
+   
     
    
     
